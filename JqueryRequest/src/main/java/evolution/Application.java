@@ -18,6 +18,7 @@ public class Application {
 		String message = "My name is " + anyDto.getName();
 		ResponseDto responseDto = new ResponseDto();
 		responseDto.setMessage(message);
+		System.out.println(message);
 		return responseDto;
 	}
 	
