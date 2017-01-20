@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#submit').click(function() {// # means select by ID.
+			var requestDto = {name : 'anyName'};// Create an json object.
+			$.ajax({
+			    url: 'http://localhost:8080/0',
+			    type: 'POST',
+			    data: JSON.stringify(requestDto),// Turn the json object into a json string.
+			    contentType: 'application/json; charset=utf-8',
+			    dataType: 'json',
+			    async: false,
+			    success: function(responseDto) {
+			        alert(responseDto.message);
+			    }
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="submit" id="submit" value="Submit"/>
+</body>
+</html>
